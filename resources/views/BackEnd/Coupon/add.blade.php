@@ -1,6 +1,6 @@
 @extends('BackEnd.master')
 @section('title')
-Delivery Boy Page
+Coupon Code Page
 @endsection
 
 @section('content')
@@ -17,32 +17,43 @@ Delivery Boy Page
                       </div>
                     @endif
                     <div class="card-header text-center">
-                        Delivery Boy
+                        Coupon Code Page
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('delivery_save') }}" method="post">
+                        <form action="{{ route('save_coupon_code') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="delivery_boy_name">
+                                <label>Code Name</label>
+                                <input type="text" class="form-control" name="coupon_code">
                             </div>
                             <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="text" class="form-control" name="delivery_boy_phone_number">
+                                <label>Coupon Value</label>
+                                <input type="number" class="form-control" name="coupon_value">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" name="delivery_boy_password">
+                                <label>Cart Min Value</label>
+                                <input type="number" class="form-control" name="cart_min_value">
+                            </div>
+                            <div class="form-group">
+                                <label>Expired On</label>
+                                <input type="date" class="form-control" name="expired_on">
                             </div>
                             <div class="form-group">
                                 <label>Added On</label>
                                 <input type="date" class="form-control" name="added_on">
                             </div>
                             <div class="form-group">
-                                <label>Boy Status</label>
+                                <label>Coupon Type</label>
                                 <div class="radio">
-                                    <input type="radio" name="delivery_boy_status" value="1">Active
-                                    <input type="radio" name="delivery_boy_status" value="0">Inactive
+                                    <input type="radio" name="coupon_type" value="1">Persentage
+                                    <input type="radio" name="coupon_type" value="0">Fixed
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Coupon Status</label>
+                                <div class="radio">
+                                    <input type="radio" name="coupon_status" value="1">Active
+                                    <input type="radio" name="coupon_status" value="0">Inactive
                                 </div>
                             </div>
                             <button type="submit" name="btn" class="btn btn-outline-primary btn-block">DeliveryBoy Add</button>
