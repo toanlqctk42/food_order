@@ -73,30 +73,48 @@
                         </tr>
 
                         {{-- ============================== Modal start here =========================== --}}
-                        {{-- <div class="modal fade" id="edit{{ $boy->delivery_boy_id }}" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="edit{{ $code->coupon_id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLable" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Update Delivery Boy</h5>
+                                        <h5 class="modal-title">Update Coupon Code</h5>
                                         <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{ route('delivery_boy_update') }}" method="post">
+                                        <form action="{{ route('update_coupon_code') }}" method="post">
                                             @csrf
                                             <div class="form-group">
-                                                <label>Delivery Boy Name</label>
-                                                <input type="text" class="form-control" name="delivery_boy_name"
-                                                    value="{{ $boy->delivery_boy_name }}">
-                                                <input type="hidden" class="form-control" name="delivery_boy_id"
-                                                    value="{{ $boy->delivery_boy_id }}">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" name="coupon_code"
+                                                    value="{{ $code->coupon_code }}">
+                                                <input type="hidden" class="form-control" name="coupon_id"
+                                                    value="{{ $code->coupon_id }}">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="delivery_boy_phone_number"
-                                                    value="{{ $boy->delivery_boy_phone_number }}">
+                                                <label>Coupon Value</label>
+                                                <input type="number" class="form-control" name="coupon_value"
+                                                    value="{{ $code->coupon_value }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cart Min Value</label>
+                                                <input type="number" class="form-control" name="cart_min_value"
+                                                    value="{{ $code->cart_min_value }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Coupon Type</label>
+                                                <div class="radio">
+                                                    @if ($code->coupon_type == 1)
+                                                        <input type="radio" name="coupon_type" value="1" checked>Persentage
+                                                        <input type="radio" name="coupon_type" value="0">Fixed
+                                                    @else
+                                                        <input type="radio" name="coupon_type" value="1">Persentage
+                                                        <input type="radio" name="coupon_type" value="0" checked>Fixed
+                                                    @endif
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <input type="submit" class="btn btn-primary" value="Update">
@@ -105,7 +123,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                         {{-- ============================== Modal end here =========================== --}}
                     @endforeach
                 </tbody>

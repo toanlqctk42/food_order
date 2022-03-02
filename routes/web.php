@@ -58,3 +58,13 @@ Route::get('/coupon/code/active/{coupon_id}','CouponController@code_active')->na
 Route::post('/coupon/code/update','CouponController@code_update')->name('update_coupon_code');
 
 /*==============Coupon Code end here==================================*/
+
+/*==============Dish start here==================================*/
+Route::get('/dish/add','DishController@index')->name('show_dish_table');
+Route::post('/dish/save','DishController@save_dish')->name('save_dish_data');
+Route::get('/dish/manage','DishController@manage_dish')->name('manage_dish_table');
+Route::get('/dish/active/{dish_id}','DishController@active_dish')->name('dish_active');
+Route::get('/dish/inactive/{dish_id}','DishController@inactive_dish')->name('dish_inactive');
+Route::get('/dish/delete/{dish_id}','DishController@delete_dish')->name('dish_delete');
+Route::post('/dish/update','DishController@update_dish')->name('update_dish');
+/*==============Dish end here==================================*/

@@ -56,7 +56,7 @@ Coupon Code Page
                                     <input type="radio" name="coupon_status" value="0">Inactive
                                 </div>
                             </div>
-                            <button type="submit" name="btn" class="btn btn-outline-primary btn-block">DeliveryBoy Add</button>
+                            <button type="submit" name="btn" class="btn btn-outline-primary btn-block">Conpon Add</button>
                         </form>
                     </div>
                 </div>

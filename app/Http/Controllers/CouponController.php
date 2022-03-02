@@ -27,21 +27,22 @@ class CouponController extends Controller
 
         return back()->with('sms','Coupon Saved');
     }
-
+    
     public function code_manage()
     {
         $coupons= Coupon::all();
-
+        
         return view('BackEnd.Coupon.manage',compact('coupons'));
     }
 
     public function code_delete($coupon_id)
     {
         $coupon = Coupon::find($coupon_id);
-
+        
         $coupon->delete();
         return back()->with('sms','Coupon Code Deleted');
     }
+    
     public function code_active($coupon_id)
     {
         $coupon = Coupon::find($coupon_id);
@@ -49,11 +50,24 @@ class CouponController extends Controller
         $coupon->save();
         return back();
     }
+    
     public function code_inactive($coupon_id)
     {
         $coupon = Coupon::find($coupon_id);
         $coupon->coupon_status=0;
         $coupon->save();
         return back();
+    }
+    
+    public function code_update(Request $request)
+    {
+        $coupon  = Coupon::find($request->coupon_id);
+        $coupon->coupon_code = $request->coupon_code;
+        $coupon->coupon_type = $request->coupon_type;
+        $coupon->coupon_value = $request->coupon_value;
+        $coupon->cart_min_value = $request->cart_min_value;
+        $coupon->save();
+
+        return back()->with('sms','Coupon Updated');
     }
 }
