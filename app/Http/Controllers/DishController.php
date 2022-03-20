@@ -29,9 +29,7 @@ class DishController extends Controller
         $dish->dish_detail = $request->dish_detail;
         $dish->dish_image = $imgUrl;
         $dish->dish_status = $request->dish_status;
-        $dish->full  =$request->full;
         $dish->full_price  =$request->full_price;
-        $dish->half  =$request->half;
         $dish->half_price  =$request->half_price;
         $dish->save();
 
@@ -91,18 +89,14 @@ class DishController extends Controller
             $dish->category_id = $request->category_id;
             $dish->dish_detail  = $request->dish_detail;
             $dish->dish_image = $imgUrl;
-            $dish->full  =$request->full;
             $dish->full_price  =$request->full_price;
-            $dish->half  =$request->half;
             $dish->half_price  =$request->half_price;
         }
         else{
             $dish->dish_name = $request->dish_name;
             $dish->category_id = $request->category_id;
             $dish->dish_detail  = $request->dish_detail;
-            $dish->full  =$request->full;
             $dish->full_price  =$request->full_price;
-            $dish->half  =$request->half;
             $dish->half_price  =$request->half_price;
         }
 

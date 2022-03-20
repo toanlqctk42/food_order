@@ -20,10 +20,8 @@ class CreateDishesTable extends Migration
             $table->longText('dish_detail');
             $table->text('dish_image');
             $table->integer('dish_status');
-            $table->string('full')->nullable();
-            $table->float('full_price')->nullable();
-            $table->string('half')->nullable();
-            $table->float('half_price')->nullable();
+            $table->float('full_price',10,2)->nullable();
+            $table->float('half_price',10,2)->nullable();
             $table->timestamps();
         });
     }

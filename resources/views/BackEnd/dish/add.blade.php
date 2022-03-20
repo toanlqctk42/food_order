@@ -56,13 +56,13 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="full" placeholder="Full">
+                                                <label>Full Price</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" name="full_price" placeholder="Enter price">
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="half" placeholder="Half">
+                                                <label>Price Half</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" name="half_price" placeholder="enter 2nd price">

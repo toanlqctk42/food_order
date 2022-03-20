@@ -113,13 +113,13 @@
                                                     <div class="form-group">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <input type="text" class="form-control" name="full" value="{{ $dish->full }}">
+                                                                <label>Full Price</label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <input type="text" class="form-control" name="full_price" value="{{ $dish->full_price }}">
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <input type="text" class="form-control" name="half" value="{{ $dish->half }}">
+                                                                <label>Price Half</label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <input type="text" class="form-control" name="half_price" value="{{ $dish->half_price }}">

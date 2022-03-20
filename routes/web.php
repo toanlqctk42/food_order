@@ -14,10 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/','FrontEndController@index');
 
+Route::get('/category/dish/show/{category_id}','FrontEndController@dish_show')->name('category_dish');
+
+/* ================= cart route start here====================*/
+Route::post('add/cart','cartController@insert')->name('add_to_cart');
+Route::get('cart/show','cartController@show')->name('cart_show');
+Route::get('cart/remove/{rowId}','cartController@remove')->name('remove_item');
+Route::post('cart/update','cartController@update')->name('update_cart');
+/* ================= cart route end here====================*/
+
+/*================= check out route start here =================*/
+Route::get('/checkout/payment','CheckOutController@payment')->name('checkout_payment');
+Route::get('/checkout/new/order','CheckOutController@order')->name('new_order');
+Route::get('/checkout/new/complete','CheckOutController@complete')->name('order_complete');
+/*================= check out route end here ===================*/
+
+/*================= customer start here ===================*/
+Route::get('/register/customer','CustomerController@show')->name('sign_up');
+Route::post('/register/customer/store','CustomerController@store')->name('store_customer');
+
+Route::get('/login/customer','CustomerController@login')->name('login_in');
+Route::post('/logout/customer','CustomerController@logout')->name('log_out');
+Route::post('/check/customer/login','CustomerController@check')->name('check_login');
+
+Route::get('/shipping','CustomerController@shipping');
+Route::post('/checkout/shipping/store','CustomerController@save')->name('shipping_store');
+/*================= customer end here ===================*/
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

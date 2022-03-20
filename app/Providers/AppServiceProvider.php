@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\category;
+use Facade\FlareClient\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('FrontEnd.include.banner', function ($view) {
+            
+            $view->with('categories',category::where('category_status',1)->get());
+        });
+        view()->composer('FrontEnd.include.dish', function ($view) {
+            
+            $view->with('categories',category::where('category_status',1)->get());
+        });
     }
 }
